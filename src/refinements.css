@@ -56,7 +56,7 @@ svg { flex-shrink: 0; }
 .card:hover { transform: none; box-shadow: var(--shadow-soft); border-color: var(--border); }
 .card-head { padding: 22px 24px 18px; align-items: flex-start; }
 .card-head > div { min-width: 0; }
-.card-head h2 { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 14px; font-weight: 650; color: #263f35; line-height: 1.5; }
+.card-head h2 { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: #263f35; line-height: 1.5; }
 .card-head p, .card-bottom-note { color: var(--muted); font-size: 11px; line-height: 1.6; }
 .card-head p { margin-top: 4px; }
 .page-heading { margin-bottom: 24px; gap: 20px; }
@@ -165,13 +165,13 @@ svg { flex-shrink: 0; }
 .dashboard-middle, .dashboard-bottom { grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr); gap: 22px; margin-bottom: 24px; }
 .dashboard-bottom { margin-top: 24px; }
 .chart-summary { padding: 0 24px 18px; gap: 12px; border-color: #edf0e8; }
-.chart-summary > div > span:first-child { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 24px; color: #244638; letter-spacing: -0.7px; }
+.chart-summary > div > span:first-child { font-family: var(--font-body); font-size: 24px; color: #244638; letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .chart-summary > span { font-size: 10px; color: #73806f; }
 .chart-summary > div > span:last-child { margin-top: 5px; font-size: 10px; color: #73806f; }
 .revenue-chart { height: 235px; padding: 14px 16px 16px 0; }
 .compact-select { min-height: 33px; font-size: 10px; border-radius: 7px; }
 .donut-wrap { height: 198px; padding: 0; }
-.donut-label strong { color: #264737; font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 29px; }
+.donut-label strong { color: #264737; font-family: var(--font-body); font-size: 29px; font-variant-numeric: tabular-nums; }
 .donut-label span { font-size: 10px; color: #71806b; }
 .room-legend { border-top: 1px solid #edf0e8; padding: 17px 23px; gap: 12px; }
 .room-legend > div { font-size: 11px; }
