@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme inline {
@@ -23,8 +22,8 @@
   --color-sky: var(--sky);
   --color-sunset: var(--sunset);
 
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -786,7 +785,7 @@ svg {
 .room-card:hover img { transform: scale(1.04); }
 
 /* small utility for serif font class used by components */
-.font-serif { font-family: 'Playfair Display', Georgia, serif; }
+.font-serif { font-family: var(--font-display); }
 
 
 /* Gold/yellow accent tokens */
@@ -1303,7 +1302,7 @@ svg {
   border-radius: 50%;
 }
 .banner-content h2 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 31px;
   line-height: 1.2;
   font-weight: 400;
@@ -2321,7 +2320,7 @@ td small {
   letter-spacing: 1px;
 }
 .detail-cover h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 28px;
   margin: 6px 0;
@@ -2962,7 +2961,7 @@ td small {
   margin-bottom: 20px;
 }
 .payment-card h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 24px;
   line-height: 1.4;
@@ -3109,7 +3108,7 @@ td small {
   color: #8ba874;
 }
 .support-banner h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 400;
   color: #688455;
@@ -3170,7 +3169,7 @@ td small {
   letter-spacing: 3px;
 }
 .review-grid article > p {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 17px;
   line-height: 1.75;
   color: #82956f;
@@ -3217,7 +3216,7 @@ td small {
   font-size: 9px;
 }
 .loyalty-banner h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 35px;
   font-weight: 400;
   margin: 15px 0;
@@ -3540,7 +3539,7 @@ td small {
   text-align: center;
 }
 .promotion-card h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
@@ -3553,7 +3552,8 @@ td small {
 }
 .promo-code {
   font-size: 13px;
-  font-family: monospace;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
   letter-spacing: 2px;
   border: 1px dashed #d8e2ca;
   border-radius: 7px;
@@ -3681,7 +3681,7 @@ td small {
   margin: 0;
 }
 .stay-card h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 25px;
   font-weight: 400;
   line-height: 1.3;
@@ -3813,7 +3813,7 @@ td small {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 21px;
   color: #a0b988;
 }
@@ -3888,7 +3888,7 @@ td small {
   letter-spacing: -2px;
 }
 .login-visual h1 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 46px;
   font-weight: 400;
   line-height: 1.3;
