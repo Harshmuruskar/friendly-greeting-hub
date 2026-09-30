@@ -5,6 +5,6 @@ import { fileURLToPath, URL } from 'node:url';
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
-  server: { host: '127.0.0.1', port: 5187, strictPort: true },
+  server: { host: '::', port: 8080 },
   build: { chunkSizeWarningLimit: 900 },
 });
