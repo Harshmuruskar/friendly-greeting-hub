@@ -475,6 +475,21 @@ export function Layout() {
               ))}
             </select>
           )}
+          <div className="bg-intensity-control">
+            <span>Background</span>
+            <div className="module-tabs" role="group" aria-label="Background image intensity">
+              {bgLevels.map((level) => (
+                <button
+                  key={level}
+                  onClick={() => setBgIntensity(level)}
+                  className={bgIntensity === level ? 'active' : ''}
+                  aria-pressed={bgIntensity === level}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
         <main id="main-content" className="main-content" tabIndex={-1}>
           <Outlet />
