@@ -168,6 +168,14 @@ export function Layout() {
       previous?.focus();
     };
   }, [mobile]);
+  const [bgIntensity, setBgIntensity] = useState<BgLevel>(() => {
+    const saved = localStorage.getItem('rrms-bg-intensity');
+    return bgLevels.includes(saved as BgLevel) ? (saved as BgLevel) : 'balanced';
+  });
+  useEffect(() => {
+    document.documentElement.dataset.bgIntensity = bgIntensity;
+    localStorage.setItem('rrms-bg-intensity', bgIntensity);
+  }, [bgIntensity]);
   if (!actor) return <Navigate to="/login" replace />;
   const base = `/${actor.module.toLowerCase()}`;
   const nav = (
