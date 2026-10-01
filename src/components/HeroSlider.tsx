@@ -1,22 +1,25 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useState } from 'react';
 import { ArrowUpRight, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
+import propertyHero from '../assets/resort-hero-property.jpg';
+import suiteHero from '../assets/resort-hero-suite.jpg';
+import serviceHero from '../assets/resort-hero-service.jpg';
 
 const slides = [
   {
-    image: '/images/resort.jpg',
+    image: propertyHero,
     title: 'Thoughtful hospitality.\nBeautiful stays.',
     subtitle: 'Every room, every detail, every guest. Bring it all together in one place.',
     label: 'A little care. An exceptional stay.',
   },
   {
-    image: '/images/suite.jpg',
+    image: suiteHero,
     title: 'A warm welcome,\ndown to the last detail.',
     subtitle: 'Keep your rooms ready and make each arrival feel effortless.',
     label: 'Ready for your next arrival',
   },
   {
-    image: '/images/resort.jpg',
+    image: serviceHero,
     title: 'Your resort.\nWorking in harmony.',
     subtitle: 'A clear view of your property, with more time for the people who make it special.',
     label: 'One resort. Every perspective.',
@@ -37,7 +40,7 @@ export default function HeroSlider({
   const slide = slides[index];
   return (
     <section className="hero-slider" aria-roledescription="carousel" aria-label="Your resort">
-      <img className="hero-image" src={slide.image} alt="" fetchPriority="high" />
+      <img className="hero-image" src={slide.image} alt="" width={1920} height={1080} fetchPriority="high" />
       <div className="hero-shade" />
       <motion.div
         key={index}
