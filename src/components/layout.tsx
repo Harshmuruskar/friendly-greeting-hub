@@ -38,6 +38,8 @@ import { useStore } from '../lib/store';
 import { can, roles, shortDate, initials } from '../lib/domain';
 import type { Module, Permission, Role } from '../lib/domain';
 import { Avatar, Button, Menu, MenuItem, Modal, Confirm, Badge, Empty } from './ui';
+const bgLevels = ['off', 'subtle', 'balanced', 'vivid'] as const;
+type BgLevel = (typeof bgLevels)[number];
 type Item = {
   path: string;
   label: string;
