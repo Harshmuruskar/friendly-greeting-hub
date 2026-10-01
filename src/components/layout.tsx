@@ -38,6 +38,8 @@ import { useStore } from '../lib/store';
 import { can, roles, shortDate, initials } from '../lib/domain';
 import type { Module, Permission, Role } from '../lib/domain';
 import { Avatar, Button, Menu, MenuItem, Modal, Confirm, Badge, Empty } from './ui';
+const bgLevels = ['off', 'subtle', 'balanced', 'vivid'] as const;
+type BgLevel = (typeof bgLevels)[number];
 type Item = {
   path: string;
   label: string;
@@ -168,6 +170,14 @@ export function Layout() {
       previous?.focus();
     };
   }, [mobile]);
+  const [bgIntensity, setBgIntensity] = useState<BgLevel>(() => {
+    const saved = localStorage.getItem('rrms-bg-intensity');
+    return bgLevels.includes(saved as BgLevel) ? (saved as BgLevel) : 'balanced';
+  });
+  useEffect(() => {
+    document.documentElement.dataset.bgIntensity = bgIntensity;
+    localStorage.setItem('rrms-bg-intensity', bgIntensity);
+  }, [bgIntensity]);
   if (!actor) return <Navigate to="/login" replace />;
   const base = `/${actor.module.toLowerCase()}`;
   const nav = (
@@ -475,6 +485,21 @@ export function Layout() {
               ))}
             </select>
           )}
+          <div className="bg-intensity-control">
+            <span>Background</span>
+            <div className="module-tabs" role="group" aria-label="Background image intensity">
+              {bgLevels.map((level) => (
+                <button
+                  key={level}
+                  onClick={() => setBgIntensity(level)}
+                  className={bgIntensity === level ? 'active' : ''}
+                  aria-pressed={bgIntensity === level}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
         <main id="main-content" className="main-content" tabIndex={-1}>
           <Outlet />

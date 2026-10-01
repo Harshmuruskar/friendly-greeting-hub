@@ -616,10 +616,61 @@ svg {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   background: url('./assets/content-background.jpg') center top / cover fixed no-repeat;
-  opacity: 0.18;
+  opacity: var(--content-bg-opacity, 0.18);
   pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+/* Readability veil: scales with the image so text contrast stays safe. */
+.main-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--background);
+  opacity: var(--content-bg-veil, 0);
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+[data-bg-intensity="off"] {
+  --content-bg-opacity: 0;
+  --content-bg-veil: 0;
+}
+
+[data-bg-intensity="subtle"] {
+  --content-bg-opacity: 0.12;
+  --content-bg-veil: 0;
+}
+
+[data-bg-intensity="balanced"] {
+  --content-bg-opacity: 0.3;
+  --content-bg-veil: 0.12;
+}
+
+[data-bg-intensity="vivid"] {
+  --content-bg-opacity: 0.52;
+  --content-bg-veil: 0.26;
+}
+
+.bg-intensity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.bg-intensity-control>span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.bg-intensity-control .module-tabs button {
+  text-transform: capitalize;
 }
 
 .app-footer {
